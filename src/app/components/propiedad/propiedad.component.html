@@ -1,3 +1,124 @@
-<p>propiedad works!</p>
+<div class="container ">
+
+    <!-- Nav tabs -->
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active">Fotos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Mapa</a>
+      </ul>
+    
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="tab1Id" role="tabpanel"></div>
+        <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
+        <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
+        <div class="tab-pane fade" id="tab4Id" role="tabpanel"></div>
+        <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
+    </div>
+    
+    <script>
+        $('#navId a').click(e => {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+    </script>
+
+    <app-carousel></app-carousel>
+
+    <div class="mt-4">
+        
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <h4>{{propiedad.title}}</h4>
+        </div>
+        <div class="col-3">
+            One of three columns
+        </div>
+        <div class="col-3">
+            <p>{{propiedad.price}}</p>
+        </div>
+    </div>
+
+    <!-- card de propiedad -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Descripción</h5>
+            <p class="card-text">{{propiedad.description}}</p>
+            <a href="#" class="btn btn-primary">Ver mas</a>
+            <hr>
+            <h4>Detalles de la Propiedad:</h4>
+
+            <!-- contendor de detalles -->
+            <div class="container px-4" *ngIf="propiedad.details">
+                <div class="row">
+                    <!-- tipo de propiedad -->
+                    <div class="col-4">
+                        <i class="fas fa-building text-primary"></i> Tipo de Propiedad:
+                        <p>{{propiedad['details']['type']}}</p>
+                    </div>
+
+                    <!-- tamaño de lote -->
+                    <div class="col-4">
+                        <i class="text-primary fas fa-ruler-combined"></i> Tamaño de lote:
+                        <p>{{propiedad.details.size}}</p>
+                    </div>
+
+                    <!-- aire acondicionado -->
+                    <div class="col-4">
+                        <i class="text-primary fa fa-snowflake-o" aria-hidden="true"></i> Aire Acondicionado:
+                        <p>{{propiedad.details.air_conditioner|siNo}}</p>
+                    </div>
+
+                    <!-- Jardin -->
+                    <div class="col-4">
+                        <i class="text-primary fa fa-leaf" aria-hidden="true"></i> Jardin:
+                        <p>{{propiedad.details.backyard | siNo}}</p>
+                    </div>
+
+                    <!-- baños -->
+                    <div class="col-4">
+                        <i class="text-primary fa fa-shower" aria-hidden="true"></i> Baños:
+                        <p>{{propiedad.details.bathrooms}}</p>
+                    </div>
+                    <div class="col-4">
+                        <i class="text-primary fa fa-bed" aria-hidden="true"></i> Habitaciones:
+                        <p>{{propiedad.details.bedrooms}}</p>
+                    </div>
+                    <div class="col-4">
+                        <i class="text-primary fa fa-level-up" aria-hidden="true"></i> Pisos:
+                        <p>{{propiedad.details.floors}}</p>
+                    </div>
+                    <div class="col-4">
+                        <i class="text-primary fa fa-car" aria-hidden="true"></i> Cocheras:
+                        <p>{{propiedad.details.parking}}</p>
+                    </div>
+                    <div class="col-4">
+                        <i class="text-primary fa fa-leaf" aria-hidden="true"></i> Seguridad:
+                        <p>{{propiedad.details.security | siNo}}</p>
+                    </div>
+                    <div class="col-4">
+                        <i class="text-primary fas fa-broom"></i> Cuarto de Servicio:
+                        <p>{{propiedad.details.service_room | siNo}}</p>
+                    </div>
+                    <div class="col-4">
+                        <i class="text-primary fas fa-umbrella-beach"></i> Terraza:
+                        <p>{{propiedad.details.terrace | siNo}}</p>
+                    </div>
+                    <div class="col-4">
+                        <i class="text-primary fas fa-warehouse"></i> Bodega:
+                        <p>{{propiedad.details.warehouse | siNo}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
 
 
+            <!-- <button (click)="nextPropiedad()" class="btn btn-primary">Siguiente Propiedad</button> -->
+        </div>
+
+    </div>
+</div>
