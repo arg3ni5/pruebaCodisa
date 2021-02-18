@@ -1,4 +1,35 @@
 <div class="container ">
+
+    <!-- Nav tabs -->
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active">Fotos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Mapa</a>
+      </ul>
+    
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="tab1Id" role="tabpanel"></div>
+        <div class="tab-pane fade" id="tab2Id" role="tabpanel"></div>
+        <div class="tab-pane fade" id="tab3Id" role="tabpanel"></div>
+        <div class="tab-pane fade" id="tab4Id" role="tabpanel"></div>
+        <div class="tab-pane fade" id="tab5Id" role="tabpanel"></div>
+    </div>
+    
+    <script>
+        $('#navId a').click(e => {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+    </script>
+
+    <app-carousel></app-carousel>
+
+    <div class="mt-4">
+        
+    </div>
     <div class="row">
         <div class="col-6">
             <h4>{{propiedad.title}}</h4>
@@ -26,7 +57,7 @@
                     <!-- tipo de propiedad -->
                     <div class="col-4">
                         <i class="fas fa-building text-primary"></i> Tipo de Propiedad:
-                        <p>{{propiedad.details.type}}</p>
+                        <p>{{propiedad['details']['type']}}</p>
                     </div>
 
                     <!-- tamaño de lote -->
