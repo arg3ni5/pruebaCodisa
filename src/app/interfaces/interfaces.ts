@@ -30,4 +30,11 @@ interface Details {
     warehouse: boolean;
 }
 
-export {Propiedad}
+interface MenuItem {
+    texto: string;
+    active?: boolean;
+    url?: string;
+    submenus?: MenuItem[];
+}
+
+export { Propiedad, MenuItem }
