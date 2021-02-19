@@ -1,0 +1,10 @@
+#map {
+  width: 100% !important;
+  height: 400px;
+  background-color: black;
+}
+.mapboxgl-canvas-container {
+
+  height: 100vh;
+
+}
