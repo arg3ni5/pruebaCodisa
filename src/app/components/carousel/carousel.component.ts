@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Propiedad } from 'src/app/interfaces/interfaces';
 import { PropiedadesService } from '../../services/propiedades.service';
 
 @Component({
@@ -13,11 +14,15 @@ export class CarouselComponent implements OnInit {
   constructor(private propiedadesService: PropiedadesService) { }
 
   ngOnInit(): void {
-    if (this.id != undefined) {
-      this.propiedadesService.getImgsPropiedades(this.id).subscribe(data=>{
-        this.imagenes = data['images'];
-      });
-    }
+    this.propiedadesService.selectPropiedad.subscribe((propiedad: Propiedad) => {
+      console.log(propiedad);
+      if (this.id != undefined) {
+        this.id = propiedad.id;
+        this.propiedadesService.getImgsPropiedades(this.id).subscribe(data=>{
+          this.imagenes = data['images'];
+        });
+      }
+    })
   }
 
 }
