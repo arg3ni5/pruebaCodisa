@@ -9,8 +9,10 @@ import { PropiedadesService } from '../../services/propiedades.service';
 })
 export class PropiedadComponent implements OnInit {
 
+
   // Objeto seleccionado
-  @Input() propiedad: Propiedad;
+  propiedad: Propiedad;
+  tab = 'fotos';
 
   constructor(private propiedadesService: PropiedadesService) {
     if (this.propiedad == undefined) {
