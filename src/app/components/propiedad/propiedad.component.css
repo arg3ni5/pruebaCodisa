@@ -1,0 +1,7 @@
+.nav-link.active {
+  color: #28a745;
+  border-bottom: 5px solid;
+}
+.nav-link {
+  color: rgba(0, 0, 0, 0.7);
+}

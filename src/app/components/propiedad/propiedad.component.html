@@ -1,12 +1,12 @@
 <div class="container ">
 
     <!-- Nav tabs -->
-    <ul class="nav justify-content-center shadow-sm mt-4">
+    <ul class="nav bg-light justify-content-center shadow-sm mt-4">
         <li class="nav-item">
-            <a class="nav-link active">Fotos</a>
+            <a class="nav-link" [class.active]="tab=='fotos'" role="button" (click)="tab='fotos'">Fotos</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link">Mapa</a>
+            <a class="nav-link" [class.active]="tab=='mapa'" role="button" (click)="tab='mapa'">Mapa</a>
         </li>
     </ul>
 
@@ -17,13 +17,13 @@
     <div class="row mt-4">
         <div class="col-6">
             <h5>{{propiedad.title}}</h5>
-            <p class=font-weight-bold>{{propiedad.address}}</p>
+            <p>{{propiedad.address}}</p>
         </div>
         <div class="col-3">
             One of three columns
         </div>
         <div class="col-3">
-            <p class=font-weight-bold>{{propiedad.price}}</p>
+            <h4>{{propiedad.price|currency}}</h4>
         </div>
     </div>
 
