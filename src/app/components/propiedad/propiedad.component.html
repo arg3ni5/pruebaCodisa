@@ -10,7 +10,7 @@
         </li>
     </ul>
 
-    <div class="" style="height: 400px">
+    <div class="shadow-sm" style="height: 400px">
         <!-- componente carousel -->
         <app-carousel [class]="{'d-none':tab!='fotos'}"></app-carousel>
         <!-- componente mapa -->
@@ -103,6 +103,7 @@
                         <i class="text-primary fa fa-leaf" aria-hidden="true"></i> Seguridad:
                         <p class=font-weight-bold>{{propiedad.details.security | siNo}}</p>
                     </div>
+                    <!-- Cuarto de Servicio -->
                     <div class="col-4 text-center">
                         <i class="text-primary fas fa-broom"></i> Cuarto de Servicio:
                         <p class=font-weight-bold>{{propiedad.details.service_room | siNo}}</p>
@@ -120,7 +121,10 @@
                 </div>
             </div>
             <hr>
-            <button (click)="nextPropiedad()" class="btn btn-success">Siguiente Propiedad</button>
+            <div class="mx-auto" style="width: 200px;">
+                <!-- btn inferior suguiente propiedad -->
+                <button (click)="nextPropiedad()" class="btn btn-success">Siguiente Propiedad</button>
+              </div>
         </div>
 
     </div>
