@@ -21,7 +21,6 @@ export class PropiedadComponent implements OnInit {
   }
   ngOnInit(): void {
     this.propiedadesService.selectPropiedad.subscribe((propiedad: Propiedad) => {
-      console.log(propiedad);
       this.propiedad = propiedad;
     })
   }

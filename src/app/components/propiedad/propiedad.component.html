@@ -44,70 +44,76 @@
             <p class="card-text">{{propiedad.description}}</p>
 
             <p>
-                <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button"
-                    aria-expanded="false" aria-controls="collapseExample">
+                <a class="btn btn-success" data-toggle="collapse" href="#collapseDetails" role="button"
+                    aria-expanded="false" aria-controls="collapseDetails">
                     Ver mas
                 </a>
             </p>
             <!-- contendor de detalles -->
-            <div class="collapse" id="collapseExample" *ngIf="propiedad.details">
+            <div class="collapse" id="collapseDetails" *ngIf="propiedad.details">
                 <hr>
                 <h4>Detalles de la Propiedad:</h4>
                 <div class="row">
                     <!-- tipo de propiedad -->
-                    <div class="col-4">
+                    <div class="col-4 text-center">
                         <i class="fas fa-building text-primary"></i> Tipo de Propiedad:
-                        <p class=font-weight-bold>{{propiedad['details']['type']}}</p>
+                        <p class=font-weight-bold>{{propiedad.details.type}}</p>
                     </div>
 
                     <!-- tamaño de lote -->
-                    <div class="col-4">
+                    <div class="col-4 text-center">
                         <i class="text-primary fas fa-ruler-combined"></i> Tamaño de lote:
                         <p class=font-weight-bold>{{propiedad.details.size}}</p>
                     </div>
 
                     <!-- aire acondicionado -->
-                    <div class="col-4">
+                    <div class="col-4 text-center">
                         <i class="text-primary fa fa-snowflake-o" aria-hidden="true"></i> Aire Acondicionado:
                         <p class=font-weight-bold>{{propiedad.details.air_conditioner|siNo}}</p>
                     </div>
 
                     <!-- Jardin -->
-                    <div class="col-4">
+                    <div class="col-4 text-center">
                         <i class="text-primary fa fa-leaf" aria-hidden="true"></i> Jardin:
                         <p class=font-weight-bold>{{propiedad.details.backyard | siNo}}</p>
                     </div>
 
                     <!-- baños -->
-                    <div class="col-4">
+                    <div class="col-4 text-center">
                         <i class="text-primary fa fa-shower" aria-hidden="true"></i> Baños:
                         <p class=font-weight-bold>{{propiedad.details.bathrooms}}</p>
                     </div>
-                    <div class="col-4">
+                    <!-- Habitaciones -->
+                    <div class="col-4 text-center">
                         <i class="text-primary fa fa-bed" aria-hidden="true"></i> Habitaciones:
                         <p class=font-weight-bold>{{propiedad.details.bedrooms}}</p>
                     </div>
-                    <div class="col-4">
+                    <!-- Pisos -->
+                    <div class="col-4 text-center">
                         <i class="text-primary fa fa-level-up" aria-hidden="true"></i> Pisos:
                         <p class=font-weight-bold>{{propiedad.details.floors}}</p>
                     </div>
-                    <div class="col-4">
+                    <!-- Cocheras -->
+                    <div class="col-4 text-center">
                         <i class="text-primary fa fa-car" aria-hidden="true"></i> Cocheras:
                         <p class=font-weight-bold>{{propiedad.details.parking}}</p>
                     </div>
-                    <div class="col-4">
+                    <!-- Seguridad -->
+                    <div class="col-4 text-center">
                         <i class="text-primary fa fa-leaf" aria-hidden="true"></i> Seguridad:
                         <p class=font-weight-bold>{{propiedad.details.security | siNo}}</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 text-center">
                         <i class="text-primary fas fa-broom"></i> Cuarto de Servicio:
                         <p class=font-weight-bold>{{propiedad.details.service_room | siNo}}</p>
                     </div>
-                    <div class="col-4">
+                    <!-- Terraza -->
+                    <div class="col-4 text-center">
                         <i class="text-primary fas fa-umbrella-beach"></i> Terraza:
                         <p class=font-weight-bold>{{propiedad.details.terrace | siNo}}</p>
                     </div>
-                    <div class="col-4">
+                    <!-- Bodega -->
+                    <div class="col-4 text-center">
                         <i class="text-primary fas fa-warehouse"></i> Bodega:
                         <p class=font-weight-bold>{{propiedad.details.warehouse | siNo}}</p>
                     </div>
