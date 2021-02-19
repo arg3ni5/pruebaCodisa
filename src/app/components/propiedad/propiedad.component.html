@@ -10,8 +10,13 @@
         </li>
     </ul>
 
-    <!-- componente carousel -->
-    <app-carousel></app-carousel>
+    <div class="" style="height: 400px">
+        <!-- componente carousel -->
+        <app-carousel [class]="{'d-none':tab!='fotos'}"></app-carousel>
+        <!-- componente mapa -->
+        <app-mapa [class]="{'d-none':tab!='mapa'}"></app-mapa>
+    </div>
+
 
     <!-- detalles de propiedad -->
     <div class="row mt-4">
@@ -20,7 +25,12 @@
             <p>{{propiedad.address}}</p>
         </div>
         <div class="col-3">
-            One of three columns
+            <div class="card text-white bg-success text-center" role="button" (click)="tab='mapa'">
+                <img class="card-img-top" src="" alt="">
+                <div class="card-body">
+                    <p class="card-text">Ver en Mapa</p>
+                </div>
+            </div>
         </div>
         <div class="col-3">
             <h4>{{propiedad.price|currency}}</h4>
