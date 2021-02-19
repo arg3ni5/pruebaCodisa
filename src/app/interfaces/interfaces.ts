@@ -37,4 +37,4 @@ interface MenuItem {
     submenus?: MenuItem[];
 }
 
-export { Propiedad, MenuItem }
+export { Propiedad, MenuItem, Location}

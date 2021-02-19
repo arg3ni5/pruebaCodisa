@@ -15,7 +15,6 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit(): void {
     this.propiedadesService.selectPropiedad.subscribe((propiedad: Propiedad) => {
-      console.log(propiedad);
       if (this.id != undefined) {
         this.id = propiedad.id;
         this.propiedadesService.getImgsPropiedades(this.id).subscribe(data=>{
