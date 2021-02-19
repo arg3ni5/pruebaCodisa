@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'src/app/interfaces/interfaces';
+import { PropiedadesService } from '../../../services/propiedades.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   menus: MenuItem[];
 
-  constructor() { }
+  constructor(private propiedadesService: PropiedadesService) { }
 
   ngOnInit(): void {
     this.menus = [
@@ -45,6 +46,10 @@ export class NavbarComponent implements OnInit {
         ]
       }
     ];
+  }
+
+  nextPropiedad() {
+    this.propiedadesService.nextPropiedad();
   }
 
 }

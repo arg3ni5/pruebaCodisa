@@ -21,21 +21,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.propiedadesService.getPropiedades().subscribe((data: any) => {
       this.propiedades = data;
-      this.propiedad = data[this.posPropiedad];
-      console.log(data);
+      this.propiedadesService.setPropiedad(this.propiedades[0], this.posPropiedad);
     })
-  }
-
-  nextPropiedad(): void {
-    if (this.posPropiedad == this.propiedades.length - 1) {
-      this.posPropiedad = 0;
-    }
-    else {
-      this.posPropiedad++;
-    }
-    if (this.propiedades && this.propiedades.length > 0) {
-      this.propiedad = this.propiedades[this.posPropiedad];
-    }
-    console.log(this.propiedad.id);
   }
 }
